@@ -1,0 +1,9 @@
+azureml-sdk
+azureml-defaults
+azure-cli
+tensorflow
+sklearn
+numpy
+matplotlib
+opencv-python
+python-dotenv

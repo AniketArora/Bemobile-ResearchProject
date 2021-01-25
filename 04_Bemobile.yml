@@ -1,0 +1,13 @@
+name: 04_Bemobile
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - ipykernel
+  - keras
+  - pandas
+  - opencv
+  - matplotlib
+  - scikit-learn
+  - nbformat
+prefix: /home/nathan/anaconda3/envs/04_Bemobile

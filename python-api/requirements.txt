@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+orjson
+numpy
+pandas
+keras-models 
+python-multipart 
+tensorflow 
+pydantic
+pytest
+pytest-azurepipelines
+pytest-cov
+xenon

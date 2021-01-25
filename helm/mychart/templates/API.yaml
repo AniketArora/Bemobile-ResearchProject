@@ -1,0 +1,45 @@
+{{- $name := "api" -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ $name }}
+  name: {{ $name }}
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: {{ $name }}
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: {{ $name }}
+    spec:
+      containers:
+      - env:
+        image: {{ .Values.api }}:{{ .Values.tag }}
+        name: {{ $name }}
+        resources: {}
+        ports:
+          - name: http
+            containerPort: 8000
+      restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: {{ $name }}
+  name: {{ $name }}
+spec:
+  ports:
+  - name: "api"
+    port: 80
+    targetPort: 8000
+  selector:
+    app: {{ $name }}
+status:
+  loadBalancer: {}
+
